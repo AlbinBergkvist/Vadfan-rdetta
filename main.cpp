@@ -1,22 +1,24 @@
-// Demonstrate primitve drawing in SFML
+#include <SFML/Graphics.hpp>
 
-#include "SFML/Graphics.hpp"
+int main()
+{
+    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    sf::CircleShape shape(100.f);
+    shape.setFillColor(sf::Color::Green);
 
-int main(int argc, char ** argv){
-  sf::RenderWindow renderWindow(sf::VideoMode(640, 480), "Demo Game");
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
 
-  sf::Event event;
-
-  sf::CircleShape circleShape(200);
-  circleShape.setFillColor(sf::Color::Blue);
-
-  while (renderWindow.isOpen()){
-    while (renderWindow.pollEvent(event)){
-      if (event.type == sf::Event::EventType::Closed)
-        renderWindow.close();
+        window.clear();
+        window.draw(shape);
+        window.display();
     }
 
-    renderWindow.clear();
-    renderWindow.draw(circleShape);
-    renderWindow.display();
-  }
+    return 0;
+}
