@@ -1,6 +1,7 @@
 #include "SFML/Graphics.hpp"
 #include "basic_movement.hpp"
 #include <unistd.h>
+
 int main()
 {
     int x = 50;
@@ -9,6 +10,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(1350, 600), "SFML works!");
     sf::CircleShape shape(5,100);
     shape.setFillColor(sf::Color::Green);
+
 
     while (window.isOpen())
     {
