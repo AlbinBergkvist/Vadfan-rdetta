@@ -1,4 +1,4 @@
 prog :
-	g++ -c main.cpp
-	g++ main.o -o sfml-app -lsfml-graphics -lsfml-window -lsfml-system
-	./sfml-app
+	g++ -c main.cpp basic_movement.cpp
+	g++ main.o basic_movement.o -o bin/sfml-app -lsfml-graphics -lsfml-window -lsfml-system
+	./bin/sfml-app
