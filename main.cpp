@@ -1,5 +1,7 @@
 #include "SFML/Graphics.hpp"
 #include "basic_movement.hpp"
+#include <unistd.h>
+
 int main()
 {
     int x = 50;
@@ -9,8 +11,10 @@ int main()
     sf::CircleShape shape(5,100);
     shape.setFillColor(sf::Color::Green);
 
+
     while (window.isOpen())
     {
+        usleep(4000);
         sf::Event event;
         while (window.pollEvent(event))
         {
