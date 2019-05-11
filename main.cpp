@@ -20,12 +20,12 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        window.clear();
-        draw(window, x, y);
-        move(&x,&y);
+
+        draw(window, x, y); // Notera skillnaden mellan hur x och y skickas i dom olika funktionerna!
+        move(&x,&y); // Varför vill vi skicka det faktiska värdet i ena? Men med referens (Platsen på värdet) i andra?
 
         window.display();
-
+        window.clear();
 
 
 
